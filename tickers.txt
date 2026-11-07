@@ -1,0 +1,110 @@
+# Univers : 100 premieres capitalisations du S&P 500
+# Date du releve : 2026-11-07
+# Source primaire : StockTi (agregateur, 475 titres affiches sur 500)
+# Source secondaire : A RECOUPER avec Wikipedia "List of S&P 500 companies"
+#                     et/ou holdings d'un ETF (SPY, IVV) avant gel definitif.
+# Symboles au format Yahoo (BRK-B, pas BRK.B).
+# Decision d'equipe : GOOG retire, GOOGL conserve (meme societe Alphabet).
+#   -> evite un doublon dans le classement transversal, la mediane et la covariance.
+#   -> Berkshire representee par BRK-B seul (capitalisation non agregee avec BRK-A).
+# Ne pas modifier sans prevenir l'equipe : cette liste est figee (revision trimestrielle).
+AAPL
+NVDA
+MSFT
+GOOGL
+AMZN
+META
+AVGO
+TSLA
+LLY
+BRK-B
+WMT
+JPM
+V
+MU
+AMD
+XOM
+JNJ
+MA
+ABBV
+COST
+CVX
+KO
+PLTR
+PG
+CSCO
+UNH
+MRK
+HD
+ORCL
+BAC
+GE
+PM
+INTC
+MS
+TXN
+NFLX
+RTX
+PANW
+CAT
+TMO
+AMAT
+WFC
+GS
+AMGN
+LIN
+LRCX
+IBM
+CRWD
+AXP
+DELL
+GILD
+GEV
+DIS
+C
+ANET
+MCD
+VZ
+PEP
+ABT
+BLK
+NEE
+CRM
+DE
+KLAC
+APH
+QCOM
+UNP
+ADI
+TMUS
+PFE
+COP
+ISRG
+DHR
+SCHW
+ACN
+TJX
+BX
+T
+UBER
+CB
+VRTX
+BA
+SPGI
+MDT
+PGR
+APP
+LMT
+IBKR
+BMY
+MO
+ETN
+LOW
+NEM
+SYK
+MCK
+COF
+BKNG
+SBUX
+ADP
+ADBE

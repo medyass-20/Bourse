@@ -1,0 +1,14 @@
+{
+  "horodatage_ny": "2026-11-07T09:42:52-05:00",
+  "mode": "full-refresh",
+  "tickers_demandes": 100,
+  "avertissements": [],
+  "ok": true,
+  "debut_telechargement": "2015-11-10",
+  "tickers_manquants": [],
+  "lignes_prix": 269725,
+  "tickers_stockes": 100,
+  "premiere_date": "2015-11-10",
+  "derniere_date": "2026-11-06",
+  "lignes_marche": 2766
+}
