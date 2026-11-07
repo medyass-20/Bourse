@@ -1,0 +1,17 @@
+# Données (rôle 1 : ingestion)
+yfinance==1.7.0
+pandas
+numpy
+pyarrow
+
+# Modèles et variables
+scikit-learn
+lightgbm
+scipy
+joblib
+
+# Optimisation, application, tests
+PyPortfolioOpt
+streamlit
+plotly
+pytest
