@@ -1,4 +1,4 @@
-# Bourse X 
+# Bourse X
 
 ### AI-Powered Stock Analysis & Portfolio Optimization
 
@@ -6,7 +6,7 @@
 
 The project focuses on analyzing US financial markets, identifying potentially outperforming stocks, and optimizing investment capital allocation while minimizing estimated portfolio risk.
 
-Developed by a team of six Computer Science Engineering students, QuantPilot AI brings together Artificial Intelligence, Data Engineering, Quantitative Finance, and Software Engineering.
+Developed by a team of six Computer Science Engineering students, Bourse X brings together Artificial Intelligence, Data Engineering, Quantitative Finance, and Software Engineering.
 
 ## Project Objectives
 
@@ -20,7 +20,7 @@ The ultimate goal is to transform financial data into actionable analytical insi
 
 ## How It Works
 
-QuantPilot AI is designed around two complementary engines:
+Bourse X is designed around two complementary engines:
 
 ### 1. AI-Powered Stock Selection
 
@@ -42,7 +42,7 @@ This allows the project to analyze historical performance, assess financial risk
 
 ## Project Vision
 
-QuantPilot AI aims to demonstrate how Artificial Intelligence and quantitative financial methods can work together to support more structured, data-driven investment decisions.
+Bourse X aims to demonstrate how Artificial Intelligence and quantitative financial methods can work together to support more structured, data-driven investment decisions.
 
 The project emphasizes:
 
@@ -63,4 +63,4 @@ The project emphasizes:
 
 ---
 
-**Disclaimer:** QuantPilot AI is an educational and research project. It does not provide financial advice, guarantee investment returns, or execute real financial transactions.
+**Disclaimer:** Bourse X is an educational and research project. It does not provide financial advice, guarantee investment returns, or execute real financial transactions.
