@@ -8,11 +8,15 @@ from src.quality_check import check_prices, quality_report
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
+def main(root=ROOT):
 
     # Lire les données brutes
-    prices = pd.read_parquet(ROOT / "data/raw/prices/prices.parquet")
-    market = pd.read_parquet(ROOT / "data/raw/market/market.parquet")
+    prices = pd.read_parquet(
+        root / "data/raw/prices/prices.parquet"
+        )
+    market = pd.read_parquet(
+        root  / "data/raw/market/market.parquet"
+        )
 
     # Nettoyer
     prices = clean_prices(prices)
@@ -31,27 +35,27 @@ def main():
     accepted, rejected = quarantine_prices(prices)
 
     # Préparer les dossiers
-    (ROOT / "data/processed").mkdir(parents=True, exist_ok=True)
-    (ROOT / "reports").mkdir(parents=True, exist_ok=True)
+    (root / "data/processed").mkdir(parents=True, exist_ok=True)
+    (root / "reports").mkdir(parents=True, exist_ok=True)
 
     # Enregistrer les résultats
     accepted.to_parquet(
-        ROOT / "data/processed/prices.parquet",
+        root / "data/processed/prices.parquet",
         index=False
     )
 
     market.to_parquet(
-        ROOT / "data/processed/market.parquet",
+        root / "data/processed/market.parquet",
         index=False
     )
 
     rejected.to_parquet(
-        ROOT / "reports/quarantine_prices.parquet",
+        root / "reports/quarantine_prices.parquet",
         index=False
     )
 
     anomalies.to_csv(
-        ROOT / "reports/quality_anomalies.csv",
+        root / "reports/quality_anomalies.csv",
         index=False
     )
 
