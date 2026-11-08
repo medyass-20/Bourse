@@ -1,7 +1,8 @@
 import pandas as pd
 from src.cleaning import clean_prices
-from src.cleaning import clean_prices, clean_market
-
+from src.cleaning import clean_market
+from pathlib import Path
+from src.cleaning import quarantine_prices
 
 # Test 1 : Normalisation des données
 def test_clean_prices():
@@ -100,3 +101,79 @@ def test_duplicate_market():
 
     # Deux lignes identiques deviennent une seule
     assert len(result) == 1
+
+def test_clean_real_data():
+
+    # Localiser les lots bruts
+    prices_files = sorted(
+        Path("data/raw/prices").glob("*.parquet")
+    )
+
+    market_files = sorted(
+        Path("data/raw/market").glob("*.parquet")
+    )
+
+    # Ignorer ce test si les données locales sont absentes
+    if not prices_files or not market_files:
+        import pytest
+        pytest.skip("Données brutes indisponibles")
+
+    # Lire les fichiers réels
+    prices = pd.concat(
+        [pd.read_parquet(f) for f in prices_files],
+        ignore_index=True
+    )
+
+    market = pd.concat(
+        [pd.read_parquet(f) for f in market_files],
+        ignore_index=True
+    )
+
+    # Nettoyer les données
+    clean_p = clean_prices(prices)
+    clean_m = clean_market(market)
+
+    # Vérifier les colonnes
+    assert set(
+        ["date", "ticker", "open", "high", "low", "close", "volume"]
+    ).issubset(clean_p.columns)
+
+    assert set(
+        ["date", "sp500", "vix"]
+    ).issubset(clean_m.columns)
+
+    # Vérifier les types des dates
+    assert pd.api.types.is_datetime64_any_dtype(clean_p["date"])
+    assert pd.api.types.is_datetime64_any_dtype(clean_m["date"])
+
+    # Vérifier que les résultats ne sont pas vides
+    assert not clean_p.empty
+    assert not clean_m.empty
+
+def test_quarantine_prices():
+
+    df = pd.DataFrame({
+        "date": pd.to_datetime([
+            "2016-07-01",
+            "2016-07-05",
+            "2016-07-06",
+            "2019-10-07",
+            "2019-10-09",
+            "2024-11-07"
+        ]),
+        "ticker": [
+            "DHR", "DHR", "DHR",
+            "IBKR", "IBKR", "APP"
+        ]
+    })
+
+    accepted, rejected = quarantine_prices(df)
+
+    assert len(accepted) == 3
+    assert len(rejected) == 3
+
+    assert "APP" in accepted["ticker"].values
+    assert not (
+        (accepted["ticker"] == "DHR")
+        & (accepted["date"] <= pd.Timestamp("2016-07-05"))
+    ).any()
