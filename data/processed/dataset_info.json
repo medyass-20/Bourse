@@ -1,0 +1,36 @@
+{
+  "genere_le": "2026-11-16T13:27:35",
+  "periode": [
+    "2016-02-18",
+    "2026-11-13"
+  ],
+  "lignes": 263409,
+  "lignes_etiquetees": 159164,
+  "part_label_1": 0.5,
+  "lignes_zone_grise_ou_sans_lendemain": 104245,
+  "lignes_fenetres_incompletes_retirees": 6000,
+  "lignes_exclues_garde_calendrier": 1,
+  "jeu_de_features": "core",
+  "nb_features": 13,
+  "features": [
+    "ret_1_rk",
+    "ret_5_rk",
+    "ret_10_rk",
+    "ret_20_rk",
+    "dist_mm20_rk",
+    "vol_20_rk",
+    "range_1_rk",
+    "volume_rel_rk",
+    "beta_60_rk",
+    "sp500_ret_1",
+    "sp500_ret_5",
+    "vix",
+    "vix_chg_5"
+  ],
+  "entrees_sha256": {
+    "prices": "56f50a3b12fe8515f20628a992f9e0b15812efb1e9534114c908cb0ac6d924e9",
+    "market": "78c09e89fd611811a4fbb06c13a5691417e96193d36161643189410497187ad3"
+  },
+  "problemes": [],
+  "ok": true
+}
